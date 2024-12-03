@@ -1,7 +1,7 @@
 //Create Launch template
 resource "aws_launch_template" "ecs_launch_template" {
   name_prefix   = "ecs-template-1"
-  image_id      = "ami-062c116e449466e7f" //Linux Image
+  image_id      = "ami-02141377eee7defb9" //Linux Image
   instance_type = "t3.micro"
 
   //Create key to allow SSH

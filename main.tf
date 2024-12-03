@@ -37,7 +37,7 @@ resource "aws_ecs_cluster_capacity_providers" "ecs_capacity_provider_bind" {
 resource "aws_ecs_task_definition" "aws_ecs_task_definition" {
   family             = "ecs_task_definition_01"
   network_mode       = "awsvpc" //Use VPC networking defined in vpc.tf
-  execution_role_arn = "arn:aws:iam::532199187081:role/ecsTaskExecutionRole"
+  execution_role_arn = "arn:aws:iam::929389731404:role/ecsTaskExecutionRole"
   cpu                = 256
   runtime_platform {
     operating_system_family = "LINUX"
