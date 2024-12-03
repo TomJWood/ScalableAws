@@ -5,10 +5,10 @@ resource "aws_launch_template" "ecs_launch_template" {
   instance_type = "t3.micro"
 
   //Create key to allow SSH
-  key_name               = "ec2ecsglog"
+  key_name               = "terraformec2"
   vpc_security_group_ids = [aws_security_group.security_group.id]
   iam_instance_profile {
-    name = "ecsInstanceRole"
+    name = "ecsInstanceProfile"
   }
 
   block_device_mappings {
