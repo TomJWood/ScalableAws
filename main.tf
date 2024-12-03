@@ -5,7 +5,7 @@ resource "aws_ecs_cluster" "ecs_cluster" {
 
 //Associate auto scaling group with ECS capacity provider
 resource "aws_ecs_capacity_provider" "aws_ecs_capacity_provider" {
-  name = "ecs_capacity_provider"
+  name = "capacity_provider"
 
   auto_scaling_group_provider {
     auto_scaling_group_arn = aws_autoscaling_group.ecs_auto_scaling_group.arn
@@ -21,7 +21,7 @@ resource "aws_ecs_capacity_provider" "aws_ecs_capacity_provider" {
 }
 
 //Bind auto scaling group capacity provider to ECS
-resource "aws_ecs_cluster_capacity_providers" "ecs_capacity_provider_bind" {
+resource "aws_ecs_cluster_capacity_providers" "capacity_provider_bind" {
   cluster_name = aws_ecs_cluster.ecs_cluster.name
 
   capacity_providers = [aws_ecs_capacity_provider.aws_ecs_capacity_provider.name]
